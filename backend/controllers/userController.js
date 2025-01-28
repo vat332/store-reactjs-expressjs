@@ -66,12 +66,13 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-const logoutCurrentUser = asyncHandler(async (res) => {
-  res.cookie("jwt", {
-    httyOnly: true,
+const logoutCurrentUser = asyncHandler(async (req, res) => {
+  res.cookie("jwt", "", {
+    httpOnly: true,
     expires: new Date(0),
   });
-  res.status(200).json({ message: "Logged out" });
+
+  res.status(200).json({ message: "Logged out successfully" });
 });
 const getAllUsers = asyncHandler(async (req, res) => {
   const users = await User.find({});
