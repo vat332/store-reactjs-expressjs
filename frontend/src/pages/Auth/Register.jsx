@@ -5,6 +5,7 @@ import Loader from "../../components/Loader";
 import { setCredentials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import { useRegisterMutation } from "../../redux/api/usersApiSlice";
+import image from "../../../media/image/image2.png";
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -122,6 +123,11 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <img
+        src={image}
+        alt=""
+        className="h-[65rem] w-[59%] xl:block md:hidden sm:hidden rounded-lg"
+      />
     </section>
   );
 };
