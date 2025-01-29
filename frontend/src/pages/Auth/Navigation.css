@@ -1,10 +1,10 @@
 #navigation-container {
-  width: 6%;
+  width: 7%;
   transition: width 0.3s ease-in-out;
   overflow: hidden;
 }
 #navigation-container:hover {
-  width: 10%;
+  width: 15%;
 }
 
 .nav-item-name {

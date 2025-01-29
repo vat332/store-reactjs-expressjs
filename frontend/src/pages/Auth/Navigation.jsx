@@ -3,7 +3,9 @@ import {
   AiOutlineHome,
   AiOutlineShopping,
   AiOutlineShoppingCart,
+  AiOutlineLogin,
 } from "react-icons/ai";
+import { TiUserAddOutline } from "react-icons/ti";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -102,7 +104,7 @@ const Navigation = () => {
       <div className="relative">
         <button
           onClick={toggleDropdown}
-          className="flex items-center text-gray-800 focus:outline-none"
+          className="flex items-center text-gray-8000 focus:outline-none"
         >
           {userInfo ? (
             <span className="text-white">{userInfo.username}</span>
@@ -112,8 +114,8 @@ const Navigation = () => {
           {userInfo && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-2 transform ${
-                dropdownOpen ? "rotate-180" : ""
+              className={`h-4 w-4 ml-1  ${
+                dropdownOpen ? "transform rotate-180" : ""
               }`}
               fill="none"
               viewBox="0 0 24 24"
@@ -131,9 +133,7 @@ const Navigation = () => {
 
         {dropdownOpen && userInfo && (
           <ul
-            className={`absolute right-0 mt-2 mr-14 space-y-2 bg-white text-gray-600 rounded-lg shadow-lg ${
-              !userInfo.isAdmin ? "-top-20" : "-top-80"
-            }`}
+            className={`absolute right-11 -top-80 mt-2 space-y-2 bg-gray-400 text-gray-800 rounded-lg shadow-lg`}
           >
             {userInfo.isAdmin && (
               <>
@@ -200,6 +200,34 @@ const Navigation = () => {
               >
                 Logout
               </button>
+            </li>
+          </ul>
+        )}
+        {!userInfo && (
+          <ul>
+            <li>
+              <Link
+                to="/login"
+                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                onClick={closeSidebar}
+              >
+                <AiOutlineLogin className="mr-2 mt-[4px]" size={36} />
+                <span className="opacity-0 group-hover:opacity-100 group-hover:ml-4 transition-all duration-300 text-lg">
+                  Login{" "}
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/register"
+                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                onClick={closeSidebar}
+              >
+                <TiUserAddOutline size={36} />
+                <span className="opacity-0 group-hover:opacity-100 group-hover:ml-4 transition-all duration-300 text-lg">
+                  Register{" "}
+                </span>
+              </Link>
             </li>
           </ul>
         )}
