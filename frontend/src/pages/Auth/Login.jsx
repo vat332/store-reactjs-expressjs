@@ -42,7 +42,7 @@ const Login = () => {
             <div className="my-[2rem]">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-black"
+                className="block text-sm font-medium text-white"
               >
                 Email Adress
               </label>
@@ -57,7 +57,7 @@ const Login = () => {
               />
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-black"
+                className="block text-sm font-medium text-white"
               >
                 Password
               </label>
@@ -81,7 +81,7 @@ const Login = () => {
             {isLoading && <Loader />}
           </form>
           <div className="mt-4">
-            <p className="text-black">
+            <p className="text-white">
               New Customer?{" "}
               <Link
                 to={redirect ? `/register?redirect=${redirect}` : "/register"}
