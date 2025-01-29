@@ -26,7 +26,7 @@ const Navigation = () => {
   };
 
   const closeSidebar = () => {
-    setShowSidebar(false);
+    setShowSidebar(!showSidebar);
   };
 
   const dispatch = useDispatch();
