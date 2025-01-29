@@ -63,17 +63,17 @@ const UserList = () => {
           <table className="w-full md:w-4/5 mx-auto bg-gray-200">
             <thead className="bg-gray-400">
               <tr>
-                <th className="px-4 py-2 text-left">ID</th>
-                <th className="px-4 py-2 text-left">NAME</th>
-                <th className="px-4 py-2 text-left">EMAIL</th>
-                <th className="px-4 py-2 text-left">ADMIN</th>
-                <th className="px-4 py-2 text-left">ACTIONS</th>
+                <th className="px-4 py-2 text-left text-black">ID</th>
+                <th className="px-4 py-2 text-left text-black">NAME</th>
+                <th className="px-4 py-2 text-left text-black">EMAIL</th>
+                <th className="px-4 py-2 text-left text-black">ADMIN</th>
+                <th className="px-4 py-2 text-left text-black">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user) => (
                 <tr key={user._id}>
-                  <td className="px-4 py-2 ">{user._id}</td>
+                  <td className="px-4 py-2 text-black">{user._id}</td>
                   <td className="px-4 py-2 ">
                     {editableUserId === user._id ? (
                       <div className="flex items-center">
@@ -85,13 +85,13 @@ const UserList = () => {
                         />
                         <button
                           onClick={() => updateHandler(user._id)}
-                          className="ml-2 bg-blue-500 text-white py-2 px-4 rounded-lg"
+                          className="ml-2 bg-blue-500 text-black py-2 px-4 rounded-lg"
                         >
                           <FaCheck />
                         </button>
                       </div>
                     ) : (
-                      <div className="flex items-center">
+                      <div className="flex items-center text-black">
                         {user.username}{" "}
                         <button
                           onClick={() =>
@@ -114,13 +114,13 @@ const UserList = () => {
                         />
                         <button
                           onClick={() => updateHandler(user._id)}
-                          className="ml-2 bg-blue-500 text-white py-2 px-4 rounded-lg"
+                          className="ml-2 bg-blue-500 text-black py-2 px-4 rounded-lg"
                         >
                           <FaCheck />
                         </button>
                       </div>
                     ) : (
-                      <div className="flex items-center">
+                      <div className="flex items-center text-black">
                         <p>{user.email}</p>
                         <button
                           onClick={() =>
@@ -139,12 +139,12 @@ const UserList = () => {
                       <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-4 py-2 ">
                     {!user.isAdmin && (
                       <div className="flex">
                         <button
                           onClick={() => deleteHandler(user._id)}
-                          className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                          className="bg-red-600 hover:bg-red-700 text-black font-bold py-2 px-4 rounded"
                         >
                           <FaTrash />
                         </button>
